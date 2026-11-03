@@ -1,65 +1,60 @@
-"use client";
-import React, { useEffect, useState } from "react";
+﻿"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
-  const navItems = [
-    { name: "Home", id: "Home" },
-    { name: "About", id: "About" },
-  ];
-
+  const pathname = usePathname();
+  const [section, setSection] = useState("Home");
   useEffect(() => {
-    // Tracks active section on scroll
-    const handleScroll = () => {
-      navItems.forEach(({ id }) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const top = section.offsetTop - 120;
-          const bottom = top + section.offsetHeight;
-          if (window.scrollY >= top && window.scrollY < bottom) {
-            setActive(id);
-          }
-        }
-      });
+    const update = () => {
+      const about = document.getElementById("About");
+      setSection(
+        pathname === "/About" ||
+          (about && about.getBoundingClientRect().top <= 160)
+          ? "About"
+          : "Home",
+      );
     };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-  };
-
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, [pathname]);
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-neutral-200">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <button
-          onClick={() => scrollToSection("Home")}
-          className="text-lg font-bold tracking-tight text-black hover:opacity-80 transition-opacity cursor-pointer"
+    <header className="site-header">
+      <nav className="shell nav-inner" aria-label="Main navigation">
+        <Link
+          href="/#Home"
+          className="brand"
+          aria-label="Christen Zakaria home"
         >
-          Mrs. Christen Zakaria
-        </button>
-
-        <ul className="flex items-center gap-8 text-sm font-medium">
-          {navItems.map(({ name, id }) => (
-            <li key={id}>
-              <button
-                onClick={() => scrollToSection(id)}
-                className={`relative py-1 transition-colors cursor-pointer ${
-                  active === id ? "text-black font-semibold" : "text-neutral-500 hover:text-black"
-                }`}
-              >
-                {name}
-                {active === id && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-black" />
-                )}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+          <span className="brand-element">
+            Cz<span>01</span>
+          </span>
+          <span>
+            Christen Zakaria<small>CHEMISTRY EDUCATOR</small>
+          </span>
+        </Link>
+        <div className="nav-links">
+          <Link
+            href="/#Home"
+            className={section === "Home" ? "active" : ""}
+            aria-current={section === "Home" ? "location" : undefined}
+          >
+            Home
+          </Link>
+          <Link
+            href="/#About"
+            className={section === "About" ? "active" : ""}
+            aria-current={section === "About" ? "location" : undefined}
+          >
+            About
+          </Link>
+          <Link className="nav-explore" href="/#curricula">
+            Find your element <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </nav>
+    </header>
   );
 }

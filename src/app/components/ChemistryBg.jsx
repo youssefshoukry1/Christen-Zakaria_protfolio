@@ -1,118 +1,118 @@
-import React from "react";
+﻿const svgProps = {
+  viewBox: "0 0 120 120",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.3,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+};
+
+function Atom() {
+  return (
+    <svg {...svgProps}>
+      <g className="chem-orbit">
+        <ellipse cx="60" cy="60" rx="49" ry="19" />
+        <ellipse cx="60" cy="60" rx="49" ry="19" transform="rotate(60 60 60)" />
+        <ellipse
+          cx="60"
+          cy="60"
+          rx="49"
+          ry="19"
+          transform="rotate(120 60 60)"
+        />
+        <circle className="chem-electron" cx="109" cy="60" r="3" />
+        <circle className="chem-electron" cx="35.5" cy="102.4" r="3" />
+        <circle className="chem-electron" cx="35.5" cy="17.6" r="3" />
+      </g>
+      <circle cx="60" cy="60" r="6" className="chem-nucleus" />
+    </svg>
+  );
+}
+
+function Flask() {
+  return (
+    <svg {...svgProps}>
+      <path d="M45 14h30M49 14v35L24 94q-5 10 8 10h56q13 0 8-10L71 49V14" />
+      <path
+        className="chem-liquid"
+        d="M36 76q12-6 24 0t24 0l12 18q5 10-8 10H32q-13 0-8-10Z"
+      />
+      <path d="M75 63h7M80 73h7M85 83h7" />
+      <circle className="chem-bubble chem-bubble-one" cx="53" cy="77" r="3" />
+      <circle className="chem-bubble chem-bubble-two" cx="65" cy="89" r="2" />
+      <circle
+        className="chem-bubble chem-bubble-three"
+        cx="61"
+        cy="56"
+        r="2.5"
+      />
+    </svg>
+  );
+}
+
+function Molecule() {
+  return (
+    <svg {...svgProps}>
+      <path d="m28 42 32-18 32 18v36L60 96 28 78Zm5 4v27m28 17 26-15m0-30L61 30M28 42 12 32m80 10 16-10M60 96v16" />
+      <circle className="chem-nucleus" cx="12" cy="32" r="4" />
+      <circle className="chem-nucleus" cx="108" cy="32" r="4" />
+      <circle className="chem-nucleus" cx="60" cy="112" r="4" />
+    </svg>
+  );
+}
+
+function Crystal() {
+  return (
+    <svg {...svgProps}>
+      <path d="m25 42 35-20 35 20v40l-35 20-35-20Zm0 0 35 20 35-20M60 62v40" />
+      <path strokeDasharray="3 5" d="M60 22v40M25 82l35-20 35 20" />
+      {[
+        [25, 42],
+        [60, 22],
+        [95, 42],
+        [25, 82],
+        [60, 62],
+        [60, 102],
+        [95, 82],
+      ].map(([cx, cy]) => (
+        <circle
+          key={`${cx}-${cy}`}
+          cx={cx}
+          cy={cy}
+          r="3.5"
+          className="chem-nucleus"
+        />
+      ))}
+    </svg>
+  );
+}
 
 export default function ChemistryBg() {
   return (
-    <div
-      aria-hidden="true"
-      className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none"
-    >
-      <style>{`
-        .ofaa-drift-1 {
-          animation: ofaaDrift1 12s ease-in-out infinite;
-          will-change: transform;
-        }
-        .ofaa-drift-2 {
-          animation: ofaaDrift2 15s ease-in-out infinite;
-          will-change: transform;
-        }
-        .ofaa-drift-3 {
-          animation: ofaaDrift3 13s ease-in-out infinite;
-          will-change: transform;
-        }
-        .ofaa-spin-slow {
-          animation: ofaaSpin 30s linear infinite;
-          transform-origin: center;
-          will-change: transform;
-        }
-
-        @keyframes ofaaDrift1 {
-          0% { transform: translate3d(0, 0, 0) rotate(0deg); }
-          33% { transform: translate3d(40px, -30px, 0) rotate(6deg); }
-          66% { transform: translate3d(-30px, 25px, 0) rotate(-5deg); }
-          100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-        }
-
-        @keyframes ofaaDrift2 {
-          0% { transform: translate3d(0, 0, 0) rotate(0deg); }
-          33% { transform: translate3d(-35px, -40px, 0) rotate(-6deg); }
-          66% { transform: translate3d(35px, 30px, 0) rotate(5deg); }
-          100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-        }
-
-        @keyframes ofaaDrift3 {
-          0% { transform: translate3d(0, 0, 0) scale(1); }
-          50% { transform: translate3d(25px, -20px, 0) scale(1.05); }
-          100% { transform: translate3d(0, 0, 0) scale(1); }
-        }
-
-        @keyframes ofaaSpin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}</style>
-
-      {/* 1. Top-Left: 3D Isometric Crystal Cube */}
-      <div className="absolute top-[8%] left-[4%] sm:left-[8%] ofaa-drift-1 scale-75 sm:scale-95">
-        <svg width="75" height="85" viewBox="0 0 75 85" fill="none">
-          <polygon points="12,32 50,32 50,70 12,70" stroke="#71717a" strokeOpacity="0.25" strokeWidth="1.6" fill="none" />
-          <polygon points="26,16 64,16 64,54 26,54" stroke="#71717a" strokeOpacity="0.16" strokeWidth="1.4" strokeDasharray="3 3" fill="none" />
-          <line x1="12" y1="32" x2="26" y2="16" stroke="#71717a" strokeOpacity="0.25" strokeWidth="1.6" />
-          <line x1="50" y1="32" x2="64" y2="16" stroke="#71717a" strokeOpacity="0.25" strokeWidth="1.6" />
-          <line x1="12" y1="70" x2="26" y2="54" stroke="#71717a" strokeOpacity="0.16" strokeWidth="1.4" strokeDasharray="3 3" />
-          <line x1="50" y1="70" x2="64" y2="54" stroke="#71717a" strokeOpacity="0.25" strokeWidth="1.6" />
-          <circle cx="12" cy="32" r="4.2" fill="#71717a" fillOpacity="0.28" />
-          <circle cx="50" cy="32" r="4.2" fill="#71717a" fillOpacity="0.28" />
-          <circle cx="12" cy="70" r="4.2" fill="#71717a" fillOpacity="0.28" />
-          <circle cx="50" cy="70" r="4.2" fill="#71717a" fillOpacity="0.28" />
-          <circle cx="26" cy="16" r="3.6" fill="#71717a" fillOpacity="0.22" />
-          <circle cx="64" cy="16" r="3.6" fill="#71717a" fillOpacity="0.22" />
-          <circle cx="26" cy="54" r="3" fill="#71717a" fillOpacity="0.18" />
-          <circle cx="64" cy="54" r="3.6" fill="#71717a" fillOpacity="0.22" />
-        </svg>
+    <div className="chemistry-background" aria-hidden="true">
+      <div className="chem-ambient chem-ambient-one" />
+      <div className="chem-ambient chem-ambient-two" />
+      <div className="chem-object chem-atom">
+        <Atom />
       </div>
-
-      {/* 2. Top-Right: Atomic Orbital Model with Rotating Electrons */}
-      <div className="absolute top-[8%] right-[4%] sm:right-[8%] ofaa-drift-2 scale-75 sm:scale-95">
-        <div className="ofaa-spin-slow">
-          <svg width="85" height="85" viewBox="0 0 85 85" fill="none">
-            <g transform="translate(42.5, 42.5)">
-              <circle cx="0" cy="0" r="5" fill="#71717a" fillOpacity="0.32" />
-              <ellipse cx="0" cy="0" rx="36" ry="15" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.5" />
-              <ellipse cx="0" cy="0" rx="36" ry="15" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.5" transform="rotate(60)" />
-              <ellipse cx="0" cy="0" rx="36" ry="15" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.5" transform="rotate(120)" />
-              <circle cx="36" cy="0" r="3.2" fill="#71717a" fillOpacity="0.28" />
-              <circle cx="-18" cy="31.2" r="3.2" fill="#71717a" fillOpacity="0.28" />
-              <circle cx="-18" cy="-31.2" r="3.2" fill="#71717a" fillOpacity="0.28" />
-            </g>
-          </svg>
-        </div>
+      <div className="chem-object chem-flask">
+        <Flask />
       </div>
-
-      {/* 3. Mid-Left: Bent Molecule (H2O) — Visible on PC/Tablet, Hidden on Phones */}
-      <div className="hidden sm:block absolute top-[52%] left-[3%] sm:left-[7%] ofaa-drift-3 scale-75 sm:scale-95">
-        <svg width="65" height="55" viewBox="0 0 65 55" fill="none">
-          <circle cx="32.5" cy="18" r="6.5" fill="#71717a" fillOpacity="0.28" />
-          <line x1="32.5" y1="18" x2="14" y2="40" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.8" />
-          <line x1="32.5" y1="18" x2="51" y2="40" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.8" />
-          <circle cx="14" cy="40" r="4.2" fill="#71717a" fillOpacity="0.25" />
-          <circle cx="51" cy="40" r="4.2" fill="#71717a" fillOpacity="0.25" />
-        </svg>
+      <div className="chem-object chem-molecule">
+        <Molecule />
       </div>
-
-      {/* 4. Bottom-Right: Tetrahedral Geometry (Methane CH4) */}
-      <div className="absolute top-[75%] right-[4%] sm:right-[8%] ofaa-drift-1 scale-75 sm:scale-95">
-        <svg width="70" height="75" viewBox="0 0 70 75" fill="none">
-          <circle cx="35" cy="40" r="6" fill="#71717a" fillOpacity="0.3" />
-          <line x1="35" y1="40" x2="35" y2="12" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.8" />
-          <line x1="35" y1="40" x2="12" y2="56" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.8" />
-          <line x1="35" y1="40" x2="58" y2="56" stroke="#71717a" strokeOpacity="0.24" strokeWidth="1.8" />
-          <line x1="35" y1="40" x2="38" y2="66" stroke="#71717a" strokeOpacity="0.18" strokeWidth="2.2" strokeDasharray="2 3" />
-          <circle cx="35" cy="12" r="4" fill="#71717a" fillOpacity="0.26" />
-          <circle cx="12" cy="56" r="4" fill="#71717a" fillOpacity="0.26" />
-          <circle cx="58" cy="56" r="4" fill="#71717a" fillOpacity="0.26" />
-          <circle cx="38" cy="66" r="3.5" fill="#71717a" fillOpacity="0.2" />
-        </svg>
+      <div className="chem-object chem-crystal">
+        <Crystal />
       </div>
+      <div className="chem-object chem-small-atom">
+        <Atom />
+      </div>
+      <span className="chem-formula chem-formula-one">H₂O</span>
+      <span className="chem-formula chem-formula-two">PV = nRT</span>
+      <span className="chem-formula chem-formula-three">C + O₂ → CO₂</span>
+      <span className="chem-particle chem-particle-one" />
+      <span className="chem-particle chem-particle-two" />
+      <span className="chem-particle chem-particle-three" />
     </div>
   );
 }

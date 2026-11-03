@@ -5,16 +5,20 @@ import ChemistryBg from "./components/ChemistryBg";
 
 export const metadata = {
   title: "Mrs. Christen Zakaria | Chemistry Educator",
-  description: "Experienced Chemistry educator specializing in AP Chemistry, Cambridge IGCSE, AS & A2 Level.",
+  description:
+    "Making chemistry click. Mrs. Christen Zakaria brings 5+ years of experience teaching AP, Cambridge IGCSE, AS & A2, Edexcel, and Year 9 chemistry.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="font-sans antialiased bg-white text-black relative selection:bg-neutral-200 selection:text-black">
+    <html lang="en">
+      <body>
         <ChemistryBg />
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Navbar />
-        {children}
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>
