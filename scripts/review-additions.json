@@ -1,0 +1,89 @@
+{
+  "chats": [
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.15 PM (1).jpeg",
+      "id": "chat-09",
+      "title": "A parent thanks Mrs. Christen for her chemistry teaching",
+      "language": "ar",
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.15 PM.jpeg",
+      "id": "chat-10",
+      "title": "Parents appreciate consistent care and encouragement",
+      "language": "ar",
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.16 PM (1).jpeg",
+      "id": "chat-11",
+      "title": "A student misses their chemistry lessons",
+      "language": "en",
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.16 PM (2).jpeg",
+      "id": "chat-12",
+      "title": "Gratitude for continuous support and care",
+      "language": "en",
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.16 PM (3).jpeg",
+      "id": "chat-13",
+      "title": "Arabic messages of thanks after AS chemistry exams",
+      "language": "ar",
+      "masks": [[350, 942, 232, 34]]
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.16 PM (4).jpeg",
+      "id": "chat-14",
+      "title": "Helpful notes and support before the exam",
+      "language": "en",
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.16 PM.jpeg",
+      "id": "chat-15",
+      "title": "A student shares appreciation for their chemistry teacher",
+      "language": "en",
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.17 PM.jpeg",
+      "id": "chat-16",
+      "title": "Students share feedback after their chemistry papers",
+      "language": "en",
+      "masks": [[414, 688, 291, 42]]
+    }
+  ],
+  "results": [
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.13 PM (1).jpeg",
+      "id": "result-07",
+      "course": "School chemistry",
+      "grade": "A",
+      "score": 93,
+      "session": null,
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.13 PM.jpeg",
+      "id": "result-08",
+      "course": "School chemistry",
+      "grade": "A+",
+      "score": 97,
+      "session": null,
+      "masks": []
+    },
+    {
+      "source": "WhatsApp Image 2026-10-29 at 4.01.14 PM.jpeg",
+      "id": "result-09",
+      "course": "School chemistry",
+      "grade": "A+",
+      "score": 97,
+      "session": null,
+      "masks": []
+    }
+  ]
+}

@@ -1,56 +1,44 @@
 ﻿const curricula = [
   {
-    symbol: "Ap",
-    title: "AP Chemistry",
-    label: "Advanced Placement",
-    text: "Build connections between core principles, tackle advanced problems, and prepare for the College Board exam.",
-  },
-  {
-    symbol: "Ig",
-    title: "Cambridge IGCSE",
-    label: "Cambridge International",
-    text: "Make sense of the essentials through clear foundations, practical inquiry, and focused syllabus preparation.",
-  },
-  {
-    symbol: "As",
-    title: "AS & A2 Level",
-    label: "Pre-university",
-    text: "Go deeper into physical, organic, and inorganic chemistry, with the understanding to connect it all.",
-  },
-  {
-    symbol: "Ed",
-    title: "Edexcel Chemistry",
-    label: "UK Curriculum",
-    text: "Develop a structured understanding of the syllabus, supported by purposeful practice and exam technique.",
-  },
-  {
     symbol: "Y9",
-    title: "Year 9 Preparation",
-    label: "The foundation",
-    text: "Start with curiosity. Build the scientific vocabulary and core knowledge for a confident transition to IGCSE.",
+    title: "Year 9 Chemistry",
+    label: "PRE-IGCSE FOUNDATION",
+    text: "Build strong foundations in chemistry through key chemical concepts, including atomic structure, elements, compounds, chemical reactions, and practical investigation.",
+  },
+  {
+    symbol: "IG",
+    title: "Cambridge IGCSE Chemistry",
+    label: "CAMBRIDGE INTERNATIONAL",
+    text: "Develop essential chemical knowledge, strengthen practical laboratory skills, and master examination techniques through structured syllabus preparation.",
+  },
+  {
+    symbol: "AS",
+    title: "Cambridge AS Level Chemistry",
+    label: "CAMBRIDGE INTERNATIONAL",
+    text: "Develop a deeper understanding of physical, inorganic, and organic chemistry through analytical thinking, practical applications, and exam-focused learning.",
+  },
+  {
+    symbol: "A2",
+    title: "Cambridge A2 Level Chemistry",
+    label: "CAMBRIDGE INTERNATIONAL",
+    text: "Master advanced chemical concepts, apply complex problem-solving strategies, and connect theoretical knowledge with practical and experimental skills.",
+  },
+  {
+    symbol: "AP",
+    title: "AP Chemistry",
+    label: "COLLEGE BOARD",
+    text: "Explore college-level chemistry through chemistry-focused inquiry, quantitative reasoning, laboratory investigations, and advanced College Board exam preparation.",
   },
 ];
 
 export default function About() {
   return (
     <section id="About" className="about-section shell">
-      <div className="section-heading">
-        <p className="eyebrow">01 / The teacher behind the chemistry</p>
-        <span className="section-index" aria-hidden="true">
-          A stronger bond with science.
-        </span>
-      </div>
       <div className="about-intro">
         <h2>
-          Complex science.
-          <br />
-          <em>Human approach.</em>
+          About <em>Mrs. Christen</em>
         </h2>
-        <div>
-          <p>
-            Chemistry is full of connections. My role is to help students see
-            them.
-          </p>
+        <div className="about-description">
           <p>
             With over five years of teaching experience across international
             curricula, I break down challenging ideas into clear, manageable
@@ -59,55 +47,40 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="teaching-equation">
-        <div className="equation-header">
-          <span className="eyebrow">The teaching equation</span>
-          <span>A different kind of reaction</span>
-        </div>
+      <div
+        className="teaching-equation"
+        role="group"
+        aria-label="Teaching approach"
+      >
         <div className="equation-body">
           <div>
-            <span className="equation-label">01 / THE SPARK</span>
             <strong>Curiosity</strong>
           </div>
           <span className="operator" aria-hidden="true">
             +
           </span>
           <div>
-            <span className="equation-label">02 / THE METHOD</span>
             <strong>Clarity & practice</strong>
           </div>
           <span className="reaction-arrow" aria-hidden="true">
             ⟶
           </span>
           <div className="equation-result">
-            <span className="equation-label">THE RESULT</span>
             <strong>
               Confidence <span aria-hidden="true">↗</span>
             </strong>
           </div>
         </div>
-        <p>Guided by patience. Powered by understanding.</p>
       </div>
       <div id="curricula" className="curricula-section">
         <div className="curricula-heading">
-          <div>
-            <p className="eyebrow">02 / Find your element</p>
-            <h2>
-              A path for <em>every learner.</em>
-            </h2>
-          </div>
-          <p>
-            From first discoveries to advanced chemistry.
-            <br />
-            Explore the curricula I teach.
-          </p>
+          <h2>Curricula</h2>
         </div>
         <div className="element-grid">
           {curricula.map((item, index) => (
             <article className="element-card" key={item.symbol}>
               <div className="element-top">
                 <span>0{index + 1}</span>
-                <span aria-hidden="true">↗</span>
               </div>
               <span className="element-symbol" aria-hidden="true">
                 {item.symbol}
@@ -119,21 +92,6 @@ export default function About() {
           ))}
         </div>
       </div>
-      <blockquote className="mission">
-        <span className="quote-mark" aria-hidden="true">
-          “
-        </span>
-        <p>
-          My mission is to turn Chemistry from a challenging subject into an
-          exciting <em>journey of discovery.</em>
-        </p>
-        <footer>
-          Mrs. Christen Zakaria <span> / Chemistry Educator</span>
-        </footer>
-        <div className="mission-atom" aria-hidden="true">
-          ⚛
-        </div>
-      </blockquote>
     </section>
   );
 }

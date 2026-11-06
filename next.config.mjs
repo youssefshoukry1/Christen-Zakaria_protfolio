@@ -1,5 +1,6 @@
 const nextConfig = {
-  /* config options here */
+  // Keep verification builds separate from an active development server.
+  distDir: process.env.NEXT_BUILD_DIR || ".next",
 };
 
 export default nextConfig;

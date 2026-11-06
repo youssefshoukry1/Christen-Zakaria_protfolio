@@ -4,7 +4,6 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="shell footer-inner">
         <p>© {new Date().getFullYear()} Mrs. Christen Zakaria</p>
-        <span>Good chemistry starts with curiosity.</span>
         <Link href="/#Home">Back to top ↑</Link>
       </div>
     </footer>

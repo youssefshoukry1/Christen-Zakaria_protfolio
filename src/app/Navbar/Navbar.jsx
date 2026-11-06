@@ -8,6 +8,15 @@ export default function Navbar() {
   const [section, setSection] = useState("Home");
   useEffect(() => {
     const update = () => {
+      if (pathname === "/Reviews") {
+        setSection("Reviews");
+        return;
+      }
+      const reviews = document.getElementById("Reviews");
+      if (reviews && reviews.getBoundingClientRect().top <= 160) {
+        setSection("Reviews");
+        return;
+      }
       const about = document.getElementById("About");
       setSection(
         pathname === "/About" ||
@@ -50,8 +59,15 @@ export default function Navbar() {
           >
             About
           </Link>
+          <Link
+            href="/#Reviews"
+            className={section === "Reviews" ? "active" : ""}
+            aria-current={section === "Reviews" ? "location" : undefined}
+          >
+            Stories & Results
+          </Link>
           <Link className="nav-explore" href="/#curricula">
-            Find your element <span aria-hidden="true">↗</span>
+            Curricula <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </nav>

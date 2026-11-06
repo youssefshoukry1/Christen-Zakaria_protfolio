@@ -41,3 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 * public
+/.next-verify/
+
+# Private original review images; publish only processed copies.
+/images_review/

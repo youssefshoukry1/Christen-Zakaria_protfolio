@@ -1,0 +1,224 @@
+{
+  "chats": [
+    {
+      "id": "chat-01",
+      "title": "Patient and supportive chemistry teaching",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-01.webp",
+      "width": 1206,
+      "height": 1215
+    },
+    {
+      "id": "chat-02",
+      "title": "Clear explanations in online chemistry classes",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-02.webp",
+      "width": 1206,
+      "height": 804
+    },
+    {
+      "id": "chat-03",
+      "title": "Parent feedback about AP and Cambridge chemistry",
+      "language": "ar",
+      "image": "/reviews/enhanced/chat-03.webp",
+      "width": 1206,
+      "height": 1132
+    },
+    {
+      "id": "chat-04",
+      "title": "An engaging and encouraging chemistry tutor",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-04.webp",
+      "width": 1206,
+      "height": 878
+    },
+    {
+      "id": "chat-05",
+      "title": "A student describes growing confidence in chemistry",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-05.webp",
+      "width": 1206,
+      "height": 1449
+    },
+    {
+      "id": "chat-06",
+      "title": "Clear lessons and stronger understanding",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-06.webp",
+      "width": 1206,
+      "height": 805
+    },
+    {
+      "id": "chat-07",
+      "title": "A parent shares feedback after an exam",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-07.webp",
+      "width": 1206,
+      "height": 1134
+    },
+    {
+      "id": "chat-08",
+      "title": "Students share their exam experiences",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-08.webp",
+      "width": 1206,
+      "height": 1458
+    },
+    {
+      "id": "chat-09",
+      "title": "A parent thanks Mrs. Christen for her chemistry teaching",
+      "language": "ar",
+      "image": "/reviews/enhanced/chat-09.webp",
+      "width": 1205,
+      "height": 779
+    },
+    {
+      "id": "chat-10",
+      "title": "Parents appreciate consistent care and encouragement",
+      "language": "ar",
+      "image": "/reviews/enhanced/chat-10.webp",
+      "width": 1206,
+      "height": 1509
+    },
+    {
+      "id": "chat-11",
+      "title": "A student misses their chemistry lessons",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-11.webp",
+      "width": 1206,
+      "height": 496
+    },
+    {
+      "id": "chat-12",
+      "title": "Gratitude for continuous support and care",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-12.webp",
+      "width": 1206,
+      "height": 583
+    },
+    {
+      "id": "chat-13",
+      "title": "Arabic messages of thanks after AS chemistry exams",
+      "language": "ar",
+      "image": "/reviews/enhanced/chat-13.webp",
+      "width": 736,
+      "height": 1600
+    },
+    {
+      "id": "chat-14",
+      "title": "Helpful notes and support before the exam",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-14.webp",
+      "width": 1206,
+      "height": 599
+    },
+    {
+      "id": "chat-15",
+      "title": "A student shares appreciation for their chemistry teacher",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-15.webp",
+      "width": 1206,
+      "height": 486
+    },
+    {
+      "id": "chat-16",
+      "title": "Students share feedback after their chemistry papers",
+      "language": "en",
+      "image": "/reviews/enhanced/chat-16.webp",
+      "width": 848,
+      "height": 1600
+    }
+  ],
+  "results": [
+    {
+      "id": "result-01",
+      "course": "Cambridge IGCSE",
+      "grade": "A",
+      "code": "0620",
+      "session": "June 2026",
+      "image": "/reviews/enhanced/result-01.webp",
+      "width": 1035,
+      "height": 924
+    },
+    {
+      "id": "result-02",
+      "course": "Cambridge IGCSE",
+      "grade": "A*",
+      "code": "0620",
+      "session": null,
+      "image": "/reviews/enhanced/result-02.webp",
+      "width": 1105,
+      "height": 549
+    },
+    {
+      "id": "result-03",
+      "course": "Cambridge IGCSE",
+      "grade": "A",
+      "code": "0620",
+      "session": "June 2026",
+      "image": "/reviews/enhanced/result-03.webp",
+      "width": 833,
+      "height": 981
+    },
+    {
+      "id": "result-04",
+      "course": "Cambridge AS Level",
+      "grade": "b",
+      "code": "9701",
+      "session": "June 2026",
+      "image": "/reviews/enhanced/result-04.webp",
+      "width": 901,
+      "height": 798
+    },
+    {
+      "id": "result-05",
+      "course": "Cambridge AS Level",
+      "grade": "b",
+      "code": "9701",
+      "session": "June 2026",
+      "image": "/reviews/enhanced/result-05.webp",
+      "width": 1427,
+      "height": 1049
+    },
+    {
+      "id": "result-06",
+      "course": "Cambridge AS Level",
+      "grade": "a",
+      "code": "9701",
+      "session": "June 2026",
+      "image": "/reviews/enhanced/result-06.webp",
+      "width": 834,
+      "height": 805
+    },
+    {
+      "id": "result-07",
+      "course": "School chemistry",
+      "grade": "A",
+      "score": 93,
+      "session": null,
+      "image": "/reviews/enhanced/result-07.webp",
+      "width": 1204,
+      "height": 210
+    },
+    {
+      "id": "result-08",
+      "course": "School chemistry",
+      "grade": "A+",
+      "score": 97,
+      "session": null,
+      "image": "/reviews/enhanced/result-08.webp",
+      "width": 1206,
+      "height": 326
+    },
+    {
+      "id": "result-09",
+      "course": "School chemistry",
+      "grade": "A+",
+      "score": 97,
+      "session": null,
+      "image": "/reviews/enhanced/result-09.webp",
+      "width": 1206,
+      "height": 216
+    }
+  ]
+}

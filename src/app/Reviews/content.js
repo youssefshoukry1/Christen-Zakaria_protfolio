@@ -1,0 +1,71 @@
+﻿export const testimonials = [
+  {
+    id: "patient-support",
+    label: "Student feedback",
+    theme: "The confidence to ask questions",
+    language: "en",
+    text: "during class you always made sure we fully understood the topic before moving on to the next one, which made everything much easier to keep up with. You always kept track of our work and made sure we were staying on top of everything, which i was really grateful for. I really appreciate how patient and supportive you were throughout the course and how you made sure that we were all comfortable enough to ask questions without being afraid which I'm very thankful for💕",
+  },
+  {
+    id: "online-chemistry",
+    label: "Student feedback",
+    theme: "Clear explanations. Stronger understanding.",
+    language: "en",
+    text: "of course! Joining these online chemistry classes has helped me a lot with answering and addressing difficult topics in every paper. Everything is simply explained followed by questions to ensure everyone understands and is able solve questions. It truly is the best path to take!",
+  },
+  {
+    id: "parent-feedback",
+    label: "Parent feedback · AP & Cambridge",
+    theme: "A parent’s perspective",
+    language: "ar",
+    text: "كل الشكر والتقدير لكِ مس كريستين على جهودك المميزة ومتابعتك المستمرة لابني وابنتي\nلمسنا فرقاً واضحاً في مستواهم وثقتهم بأنفسهم وخاصة بعد تدني مستواهم سابقا في مادة الكيميستري ap و cambridge\nنتائج أبنائي كانت انعكاساً واضحاً لجهدك وإخلاصك\nشكراً لكِ مس كريستين على كل ما قدمتيه وعلى دعمك المستمر لهم.\nفخورة جداً بالنتائج، وممتنة لأنهم كانوا مع معلمة بهذا القدر من الاحتراف والاهتمام. 🌷",
+  },
+];
+
+export const results = [
+  {
+    id: "igcse-a-01",
+    course: "Cambridge IGCSE",
+    grade: "A",
+    code: "0620",
+    session: "June 2026",
+    source: "A(a)",
+    image: "/reviews/igcse-a-01.webp",
+  },
+  {
+    id: "igcse-a-star",
+    course: "Cambridge IGCSE",
+    grade: "A*",
+    code: "0620",
+    session: null,
+    source: "A*(a*)",
+    image: "/reviews/igcse-a-star.webp",
+  },
+  {
+    id: "igcse-a-02",
+    course: "Cambridge IGCSE",
+    grade: "A",
+    code: "0620",
+    session: "June 2026",
+    source: "A(a)",
+    image: "/reviews/igcse-a-02.webp",
+  },
+  {
+    id: "as-b",
+    course: "Cambridge AS Level",
+    grade: "b",
+    code: "9701",
+    session: "June 2026",
+    source: "b(b)",
+    image: "/reviews/as-b.webp",
+  },
+  {
+    id: "as-a",
+    course: "Cambridge AS Level",
+    grade: "a",
+    code: "9701",
+    session: "June 2026",
+    source: "a(a)",
+    image: "/reviews/as-a.webp",
+  },
+];
