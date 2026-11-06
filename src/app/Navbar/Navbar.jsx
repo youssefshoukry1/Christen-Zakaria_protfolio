@@ -12,6 +12,11 @@ export default function Navbar() {
         setSection("Reviews");
         return;
       }
+      const videos = document.getElementById("Videos");
+      if (videos && videos.getBoundingClientRect().top <= 160) {
+        setSection("Videos");
+        return;
+      }
       const reviews = document.getElementById("Reviews");
       if (reviews && reviews.getBoundingClientRect().top <= 160) {
         setSection("Reviews");
@@ -65,6 +70,13 @@ export default function Navbar() {
             aria-current={section === "Reviews" ? "location" : undefined}
           >
             Stories & Results
+          </Link>
+          <Link
+            href="/#Videos"
+            className={section === "Videos" ? "active" : ""}
+            aria-current={section === "Videos" ? "location" : undefined}
+          >
+            Videos
           </Link>
           <Link className="nav-explore" href="/#curricula">
             Curricula <span aria-hidden="true">↗</span>

@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 :root {
   color-scheme: dark;
@@ -13,10 +13,12 @@
   box-sizing: border-box;
 }
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
 }
 body {
+  overflow-x: clip;
   margin: 0;
   background: var(--bg);
   color: var(--ink);
@@ -47,6 +49,7 @@ blockquote {
   margin: 0;
 }
 .shell {
+  min-width: 0;
   width: min(1200px, calc(100% - 96px));
   margin-inline: auto;
 }
@@ -2111,4 +2114,430 @@ button:focus-visible {
   .results-section {
     padding-top: 26px;
   }
+}
+
+/* Click-to-play video cards keep YouTube players off the initial page load. */
+.videos-section {
+  padding-block: 44px 64px;
+  border-top: 1px solid var(--line);
+}
+.videos-heading {
+  margin-bottom: 26px;
+}
+.videos-heading h2 {
+  font-size: clamp(32px, 4vw, 48px);
+}
+.videos-heading p {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.videos-heading a {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+.videos-heading a:hover {
+  text-decoration: underline;
+}
+.video-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 36px) / 3);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  gap: 18px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  overflow-anchor: none;
+  scrollbar-width: none;
+  padding-block: 4px 12px;
+}
+.video-grid::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.video-scroll-line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #c5f4a010;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+.video-scroll-line span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #8ca877;
+}
+.video-scroll-line.is-scrolling {
+  opacity: 0;
+  transition-duration: 0.08s;
+}
+.video-grid:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.video-scroll-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.video-scroll-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--accent);
+  font-size: 20px;
+  cursor: pointer;
+}
+.video-scroll-controls button:hover {
+  background: #2a3a26;
+}
+.video-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  scroll-snap-align: none;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.video-player {
+  flex-shrink: 0;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  background: #080d0a;
+}
+.video-player iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: auto;
+  touch-action: auto;
+}
+.video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+}
+.video-poster img {
+  object-fit: cover;
+}
+.video-poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 50%, #0008);
+  pointer-events: none;
+}
+.video-poster:focus-visible {
+  outline-offset: -4px;
+  outline: 3px solid var(--accent);
+}
+.video-play {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  background: #101510b8;
+  color: white;
+  box-shadow: 0 4px 20px #0005;
+  backdrop-filter: blur(6px);
+  transition:
+    background 0.2s,
+    scale 0.2s;
+}
+.video-play svg {
+  width: 28px;
+  height: 28px;
+}
+.video-poster:hover .video-play {
+  background: #101510e6;
+  scale: 1.06;
+}
+.video-watch {
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  left: 17px;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+.video-information {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 20px 12px;
+}
+.video-information h3 {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.video-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 18px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.video-card-actions a,
+.video-card-actions button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 11px;
+}
+.video-card-actions button {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .video-grid {
+    grid-auto-columns: calc((100% - 18px) / 2);
+  }
+}
+@media (max-width: 760px) {
+  .videos-section {
+    padding-block: 28px 36px;
+  }
+  .videos-heading {
+    margin-bottom: 18px;
+  }
+  .videos-heading h2 {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+  .videos-heading p {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  .video-grid {
+    gap: 14px;
+    grid-auto-columns: calc((100% - 14px) / 2);
+  }
+  .video-information {
+    padding: 12px 14px 6px;
+  }
+  .video-information h3 {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .video-play {
+    width: 56px;
+    height: 56px;
+  }
+  .video-play svg {
+    width: 28px;
+    height: 28px;
+  }
+  .video-watch {
+    bottom: 12px;
+    left: 13px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .video-grid {
+    grid-auto-columns: min(100%, max(240px, 78%));
+  }
+}
+
+/* Minimal in-video controls; gestures keep native gallery scrolling available. */
+.video-api-mount,
+.video-touch-surface {
+  position: absolute;
+  inset: 0;
+}
+.video-touch-surface {
+  z-index: 1;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+.video-toggle {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  background: #101510b8;
+  color: white;
+  box-shadow: 0 4px 20px #0005;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  touch-action: manipulation;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+.video-toggle.is-visible,
+.video-toggle:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.video-toggle:hover {
+  background: #101510e6;
+}
+.video-toggle svg {
+  width: 28px;
+  height: 28px;
+}
+.video-toggle:focus-visible,
+.video-touch-surface:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+.video-loading {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ffffff40;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: video-loading-turn 0.8s linear infinite;
+}
+@keyframes video-loading-turn {
+  to { transform: rotate(360deg); }
+}
+.video-seek-feedback {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0009;
+  color: white;
+  font: 600 15px Arial, sans-serif;
+  pointer-events: none;
+}
+.video-seek-feedback.is-left { left: 12%; }
+.video-seek-feedback.is-right { right: 12%; }
+.video-player-error {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #101810;
+  color: var(--accent);
+  font-size: 13px;
+  text-align: center;
+}
+
+.video-timeline {
+  position: absolute;
+  z-index: 3;
+  inset: auto 0 0;
+  padding: 22px 14px 5px;
+  background: linear-gradient(transparent, #000b);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.video-timeline.is-visible,
+.video-timeline:has(input:focus-visible) {
+  opacity: 1;
+}
+.video-timeline.is-visible input,
+.video-timeline:has(input:focus-visible) input {
+  pointer-events: auto;
+}
+.video-time {
+  display: block;
+  color: #fff;
+  font: 12px/1.4 Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 3px #000;
+}
+.video-timeline input {
+  display: block;
+  appearance: none;
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: none;
+}
+.video-timeline input::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--accent) var(--video-progress), #ffffff60 var(--video-progress));
+}
+.video-timeline input::-moz-range-track {
+  height: 3px;
+  border-radius: 3px;
+  background: #ffffff60;
+}
+.video-timeline input::-moz-range-progress {
+  height: 3px;
+  background: var(--accent);
+}
+.video-timeline input::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4.5px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 0;
+}
+.video-timeline input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.video-timeline input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

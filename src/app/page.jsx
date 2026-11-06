@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Reviews from "./Reviews/Reviews";
 import About from "./About/About";
+import Videos from "./Videos/Videos";
 
 export default function Home() {
   return (
@@ -65,6 +66,7 @@ export default function Home() {
       </div>
       <About />
       <Reviews />
+      <Videos />
     </>
   );
 }
