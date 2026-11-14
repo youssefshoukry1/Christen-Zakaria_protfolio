@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import videos from "./videos.json";
 import YouTubePlayer from "./YouTubePlayer";
 
 export default function Videos() {
+  const [videos, setVideos] = useState([]);
   const [activeVideo, setActiveVideo] = useState(null);
   const track = useRef(null);
   const indicatorTimer = useRef(null);
@@ -13,7 +13,27 @@ export default function Videos() {
   const [scrollLine, setScrollLine] = useState({ width: 0, left: 0 });
 
   useEffect(() => {
+    const controller = new AbortController();
+    async function refresh() {
+      try {
+        const response = await fetch("/api/videos", { cache: "no-store", signal: controller.signal });
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!Array.isArray(data.videos)) return;
+        setVideos(data.videos);
+        setActiveVideo(current => data.videos.some(video => video.id === current) ? current : null);
+      } catch {
+        // Keep the last available list through temporary connection failures.
+      }
+    }
+    refresh();
+    const interval = setInterval(refresh, 60000);
+    return () => { controller.abort(); clearInterval(interval); };
+  }, []);
+
+  useEffect(() => {
     const row = track.current;
+    if (!row) return;
     function measure() {
       setScrollLine({
         width: Math.min(100, (row.clientWidth / row.scrollWidth) * 100),
@@ -39,7 +59,7 @@ export default function Videos() {
       row.removeEventListener("scroll", onScroll);
       clearTimeout(indicatorTimer.current);
     };
-  }, []);
+  }, [videos]);
 
   function hideScrollLine() {
     setScrolling(true);
@@ -63,6 +83,8 @@ export default function Videos() {
     });
   }
 
+  if (!videos.length) return null;
+
   return (
     <section
       id="Videos"
@@ -73,7 +95,7 @@ export default function Videos() {
         <h2 id="videos-title">
           Video <em>Library</em>
         </h2>
-        <p>
+        {videos[0].authorUrl && <p>
           Example videos from{" "}
           <a
             href={videos[0].authorUrl}
@@ -85,7 +107,7 @@ export default function Videos() {
             {videos[0].author}
           </a>
           .
-        </p>
+        </p>}
       </header>
       <div className="video-scroll-controls">
         <button
@@ -127,6 +149,7 @@ export default function Videos() {
                 >
                   <Image
                     src={video.thumbnail}
+                    unoptimized={video.thumbnail.startsWith("https://")}
                     alt=""
                     fill
                     sizes="(max-width: 600px) 78vw, (max-width: 1000px) 44vw, 390px"
