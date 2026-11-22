@@ -6,7 +6,7 @@ import ChemistryBg from "./components/ChemistryBg";
 export const metadata = {
   title: "Mrs. Christen Zakaria | Chemistry Educator",
   description:
-    "Making chemistry click. Mrs. Christen Zakaria brings 5+ years of experience teaching Year 9, Cambridge IGCSE, Cambridge AS Level, Cambridge A2 Level, and AP Chemistry.",
+    "Explore Mrs. Christen Zakaria’s teaching approach, student results and chemistry programmes for Year 9, Cambridge IGCSE, AS and A2 Level, and AP Chemistry.",
 };
 
 export default function RootLayout({ children }) {

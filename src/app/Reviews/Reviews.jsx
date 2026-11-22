@@ -1,47 +1,46 @@
 ﻿import images from "./images.json";
 import ResultsGallery from "./ResultsGallery";
 
-export default function Reviews({ standalone = false }) {
-  const Heading = standalone ? "h1" : "h2";
+export default function Reviews() {
   return (
     <section
       id="Reviews"
       className="reviews-page shell"
-      aria-labelledby="reviews-title"
+      aria-label="Student results and feedback"
     >
-      <header className="reviews-hero">
-        <Heading id="reviews-title" className="reviews-title">
-          Student Stories <em>& Results</em>
-        </Heading>
-        <p>Select an image to enlarge it.</p>
-      </header>
-      <section
-        id="testimonials"
-        className="testimonials-section"
-        aria-labelledby="testimonials-title"
-      >
-        <div className="reviews-section-heading">
-          <h3 id="testimonials-title" className="reviews-subtitle">
-            Student & Parent Testimonials
-          </h3>
-        </div>
-        <ResultsGallery items={images.chats} kind="chats" />
-      </section>
       <section
         id="results"
         className="results-section"
         aria-labelledby="results-title"
       >
         <div className="reviews-section-heading">
-          <h3 id="results-title" className="reviews-subtitle">
-            Chemistry Results
-          </h3>
+          <h2 id="results-title" className="reviews-subtitle">
+            Chemistry exam results
+          </h2>
+          <p>Filter by course, then select an image to read the result in full.</p>
         </div>
         <ResultsGallery items={images.results} kind="results" />
         <p className="results-disclosure">
-          Personal details are concealed; grades are unchanged. Individual
-          results vary.
+          These are individual results. Student names and other identifying
+          details are hidden.
         </p>
+      </section>
+      <section
+        id="testimonials"
+        className="testimonials-section"
+        aria-labelledby="testimonials-title"
+      >
+        <div className="reviews-section-heading">
+          <h2 id="testimonials-title" className="reviews-subtitle">
+            What students and parents say
+          </h2>
+          <p>
+            Students describe having time to ask questions and working through
+            exercises after a topic is explained. Parents also describe seeing
+            their children grow more confident in chemistry.
+          </p>
+        </div>
+        <ResultsGallery items={images.chats} kind="chats" />
       </section>
     </section>
   );

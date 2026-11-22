@@ -147,6 +147,12 @@ blockquote {
   border-radius: 4px;
   padding: 12px 17px;
 }
+.nav-links .nav-explore.active {
+  border-color: var(--accent);
+}
+.nav-links .nav-explore.active::after {
+  display: none;
+}
 .nav-explore span {
   margin-left: 20px;
 }
@@ -494,7 +500,6 @@ h2 {
 }
 .curricula-section {
   padding-top: 90px;
-  scroll-margin-top: 95px;
 }
 .curricula-heading {
   display: flex;
@@ -1026,7 +1031,6 @@ h2 {
   }
   .curricula-section {
     padding-top: 32px;
-    scroll-margin-top: 8px;
   }
   .curricula-heading {
     display: block;
@@ -1050,7 +1054,7 @@ h2 {
     padding: 13px 11px;
     min-width: 0;
   }
-  .element-card:last-child {
+  .element-card:nth-child(odd):last-child {
     grid-column: 1 / -1;
   }
   .element-top {
@@ -1075,11 +1079,11 @@ h2 {
     font-size: 11px;
     line-height: 1.7;
   }
-  .element-card:last-child .element-symbol {
+  .element-card:nth-child(odd):last-child .element-symbol {
     float: left;
     margin: 12px 18px 12px 0;
   }
-  .element-card:last-child .element-label {
+  .element-card:nth-child(odd):last-child .element-label {
     margin-top: 12px;
   }
   .mission {
@@ -1549,13 +1553,13 @@ body {
   font-size: 9px;
   margin-top: 5px;
 }
-.results-filters {
+.content-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 30px;
 }
-.results-filters button {
+.content-filters button {
   min-height: 44px;
   padding: 10px 16px;
   border: 1px solid var(--line);
@@ -1566,7 +1570,7 @@ body {
   font-size: 12px;
   cursor: pointer;
 }
-.results-filters button[aria-pressed="true"] {
+.content-filters button[aria-pressed="true"] {
   background: var(--accent);
   border-color: var(--accent);
   color: #172211;
@@ -1838,11 +1842,11 @@ button:focus-visible {
     margin-top: 18px;
     font-size: 10px;
   }
-  .results-filters {
+  .content-filters {
     gap: 7px;
     margin-top: 18px;
   }
-  .results-filters button {
+  .content-filters button {
     font-size: 10px;
     padding-inline: 10px;
   }
@@ -2078,8 +2082,77 @@ button:focus-visible {
 .reviews-section-heading {
   margin-bottom: 16px;
 }
-.results-filters {
+.content-filters {
   margin-block: 0 16px;
+}
+.reviews-section-heading > p,
+.curricula-heading > p {
+  max-width: 52ch;
+}
+.lesson-approach h2,
+.faq-section h2 {
+  font-size: clamp(25px, 3vw, 37px);
+}
+.lesson-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.lesson-steps li {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.lesson-steps h3 {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 15px;
+}
+.lesson-steps p,
+.faq-section details p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.faq-section {
+  padding-block: 36px 64px;
+}
+.faq-section h2 {
+  margin-bottom: 20px;
+}
+.faq-section details {
+  border-bottom: 1px solid var(--line);
+}
+.faq-section details:first-of-type {
+  border-top: 1px solid var(--line);
+}
+.faq-section summary {
+  padding-block: 16px;
+  cursor: pointer;
+}
+.faq-section summary::marker,
+.faq-section details a {
+  color: var(--accent);
+}
+.faq-section summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.faq-section details p {
+  max-width: 65ch;
+  padding-bottom: 16px;
+}
+.faq-section details a {
+  text-decoration: underline;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
 }
 @media (max-width: 760px) {
   .hero {
@@ -2113,6 +2186,16 @@ button:focus-visible {
   .testimonials-section,
   .results-section {
     padding-top: 26px;
+  }
+  .lesson-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+  .lesson-steps li {
+    padding: 14px;
+  }
+  .lesson-steps p {
+    font-size: 13px;
   }
 }
 

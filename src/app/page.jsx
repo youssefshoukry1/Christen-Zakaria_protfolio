@@ -1,7 +1,9 @@
 ﻿import Image from "next/image";
 import Reviews from "./Reviews/Reviews";
 import About from "./About/About";
+import Curricula from "./About/Curricula";
 import Videos from "./Videos/Videos";
+import Faq from "./components/Faq";
 
 export default function Home() {
   return (
@@ -9,11 +11,9 @@ export default function Home() {
       <section id="Home" className="hero shell">
         <div className="hero-copy">
           <h1>
-            Making
-            <br />
             Chemistry
             <br />
-            <em>click.</em>
+            <em>step by step.</em>
             <span className="heading-spark" aria-hidden="true">
               ✳
             </span>
@@ -22,15 +22,16 @@ export default function Home() {
             Hi, I’m <strong>Mrs. Christen Zakaria.</strong>
           </p>
           <p className="hero-description">
-            Turning complex concepts into clear understanding — and helping
-            students approach their next exam with confidence.
+            I help students from Year 9 through Cambridge and AP Chemistry
+            make sense of reactions, work through unfamiliar questions and
+            explain their answers with confidence.
           </p>
           <div className="hero-actions">
-            <a className="button" href="#About">
-              About me <span aria-hidden="true">↗</span>
+            <a className="button" href="#testimonials">
+              Student &amp; Parent Testimonials <span aria-hidden="true">↓</span>
             </a>
-            <a className="text-link" href="#curricula">
-              Explore curricula <span aria-hidden="true">↓</span>
+            <a className="text-link" href="#results">
+              See student results <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
@@ -66,7 +67,9 @@ export default function Home() {
       </div>
       <About />
       <Reviews />
+      <Curricula />
       <Videos />
+      <Faq />
     </>
   );
 }

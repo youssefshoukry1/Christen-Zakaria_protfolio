@@ -48,7 +48,7 @@ export default function ResultsGallery({ items, kind }) {
       {isResults && (
         <>
           <div
-            className="results-filters"
+            className="content-filters"
             role="group"
             aria-label="Filter chemistry results"
           >
@@ -67,7 +67,7 @@ export default function ResultsGallery({ items, kind }) {
       )}
       <div className="review-scroll-controls">
         <span aria-live="polite">
-          {visible.length} {isResults ? "results" : "testimonials"}
+          {visible.length} {isResults ? "results" : "messages"}
         </span>
         <div>
           <button

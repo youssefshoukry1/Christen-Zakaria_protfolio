@@ -93,8 +93,9 @@ export default function Videos() {
     >
       <header className="videos-heading">
         <h2 id="videos-title">
-          Video <em>Library</em>
+          Videos <em>for further study</em>
         </h2>
+        <p>Choose a video to watch at your own pace.</p>
         {videos[0].authorUrl && <p>
           Example videos from{" "}
           <a
