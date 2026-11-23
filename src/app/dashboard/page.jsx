@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { videoId } from "../Videos/videoId";
 import "./dashboard.css";
 
-const blankVideo = () => ({ key: crypto.randomUUID(), url: "", title: "", order: 1, enabled: true });
+const blankVideo = (order) => ({ key: crypto.randomUUID(), url: "", title: "", order, enabled: true });
 
 export default function Dashboard() {
   const revision = useRef("");
@@ -123,7 +123,11 @@ export default function Dashboard() {
         <input id="dashboard-password" type="password" required autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} />
         <button disabled={busy}>{busy ? "Connecting?" : "Open dashboard"}</button>
       </form> : <>
-        <button disabled={busy} onClick={() => { setEditing({ ...blankVideo(), order: videos.length + 1 }); setFailure(""); }}>+ Add video</button>
+        <button disabled={busy} onClick={() => {
+          const lastOrder = videos.reduce((highest, video) => Math.max(highest, Number(video.order) || 0), 0);
+          setEditing(blankVideo(lastOrder + 1));
+          setFailure("");
+        }}>+ Add video</button>
         <button className="dashboard-secondary" disabled={busy} onClick={reload}>Refresh videos</button>
         <button disabled={busy || !dirty || !!editing} onClick={save}>{busy ? "Saving…" : "Save changes"}</button>
         <span>{dirty ? "Unsaved changes" : `${videos.length} videos`}</span>
@@ -135,7 +139,6 @@ export default function Dashboard() {
       <h2>{videos.some(video => video.key === editing.key) ? "Edit video" : "Add video"}</h2>
       <label>YouTube link<input type="url" required value={editing.url} onChange={event => setEditing({ ...editing, url: event.target.value })} placeholder="https://youtu.be/…" /></label>
       <label>Title<input required maxLength={300} dir="auto" value={editing.title} onChange={event => setEditing({ ...editing, title: event.target.value })} /></label>
-      <label>Display order<input type="number" min="1" max="99999" required value={editing.order} onChange={event => setEditing({ ...editing, order: event.target.value })} /></label>
       <label className="dashboard-check"><input type="checkbox" checked={editing.enabled} onChange={event => setEditing({ ...editing, enabled: event.target.checked })} />Show on website</label>
       <div className="dashboard-toolbar"><button type="submit" disabled={busy}>{busy ? "Saving…" : "Save video"}</button><button className="dashboard-secondary" type="button" disabled={busy} onClick={() => setEditing(null)}>Cancel</button></div>
     </form>}
