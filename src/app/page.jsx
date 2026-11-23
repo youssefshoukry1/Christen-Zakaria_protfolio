@@ -20,11 +20,15 @@ export default function Home() {
               ✳
             </span>
           </h1>
+          <p className="hero-intro">
+            Chemistry is my subject. Making it click is my passion.
+          </p>
           <p className="hero-description">
             I’m <strong>Mrs. Christen Zakaria</strong>, an international
-            Chemistry educator with over five years of teaching experience,
-            specialising in Cambridge IGCSE, Cambridge AS &amp; A Level,
-            Pearson Edexcel, and AP Chemistry.
+            Chemistry educator with over five years of experience teaching
+            Cambridge IGCSE, AS &amp; A Level and AP Chemistry. Different
+            curricula, different students, one shared goal: making Chemistry
+            feel possible.
           </p>
           <div className="hero-actions">
             <a className="button" href="#testimonials">
