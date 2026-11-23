@@ -2156,6 +2156,11 @@ button:focus-visible {
   border: 1px solid var(--line);
   border-radius: 5px;
 }
+.lesson-step-icon {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
 .lesson-steps h3 {
   margin-bottom: 8px;
   color: var(--accent);
