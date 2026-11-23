@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import ChemistryBg from "./components/ChemistryBg";
+import WhatsAppContact from "./components/WhatsAppContact";
 
 export const metadata = {
   title: "Mrs. Christen Zakaria | Chemistry Educator",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <WhatsAppContact />
       </body>
     </html>
   );

@@ -22,14 +22,22 @@ export default function About() {
     <section id="About" className="about-section shell" aria-labelledby="about-title">
       <div className="about-intro">
         <h2 id="about-title">
-          About <em>Mrs. Christen</em>
+          Meet Your <em>Chemistry Educator</em>
         </h2>
         <div className="about-description">
           <p>
-            I’m Christen Zakaria, a chemistry educator with over five years of
-            experience teaching international curricula. I want students to be
-            able to explain why a reaction happens, make sense of their results
-            and feel comfortable asking questions along the way.
+            My teaching philosophy is built on a simple principle: Chemistry
+            should be understood, not memorised.
+          </p>
+          <p>
+            I focus on making complex concepts clear, developing students’
+            analytical and problem-solving skills, and building the confidence
+            they need to approach challenging exam questions.
+          </p>
+          <p>
+            My goal is not only to help students achieve excellent academic
+            results, but also to develop a deep and lasting understanding of
+            Chemistry that extends beyond their exams.
           </p>
         </div>
       </div>

@@ -11,20 +11,20 @@ export default function Home() {
       <section id="Home" className="hero shell">
         <div className="hero-copy">
           <h1>
+            Making
+            <br />
             Chemistry
             <br />
-            <em>step by step.</em>
+            <em>click.</em>
             <span className="heading-spark" aria-hidden="true">
               ✳
             </span>
           </h1>
-          <p className="hero-intro">
-            Hi, I’m <strong>Mrs. Christen Zakaria.</strong>
-          </p>
           <p className="hero-description">
-            I help students from Year 9 through Cambridge and AP Chemistry
-            make sense of reactions, work through unfamiliar questions and
-            explain their answers with confidence.
+            I’m <strong>Mrs. Christen Zakaria</strong>, an international
+            Chemistry educator with over five years of teaching experience,
+            specialising in Cambridge IGCSE, Cambridge AS &amp; A Level,
+            Pearson Edexcel, and AP Chemistry.
           </p>
           <div className="hero-actions">
             <a className="button" href="#testimonials">
