@@ -17,9 +17,11 @@ export default function ResultsGallery({ items, kind }) {
   const visible = items.filter(
     (item) => !isResults || filter === "All results" || item.course === filter,
   );
+  const outcome = (item) =>
+    item.grade != null ? `Grade ${item.grade}` : `Score ${item.score}`;
   const title = (item) =>
     isResults
-      ? `${item.course}${item.course.toLowerCase().includes("chemistry") ? "" : " Chemistry"} — grade ${item.grade}`
+      ? `${item.course}${item.course.toLowerCase().includes("chemistry") ? "" : " Chemistry"} — ${outcome(item)}`
       : item.title;
   function scrollGallery(direction) {
     const track = gallery.current;
@@ -97,7 +99,7 @@ export default function ResultsGallery({ items, kind }) {
         aria-label={
           isResults
             ? "Chemistry results, scroll horizontally"
-            : "WhatsApp testimonials, scroll horizontally"
+            : "Student and parent testimonials, scroll horizontally"
         }
         className={`original-gallery ${isResults ? "original-results" : "original-chats"}`}
       >
@@ -114,8 +116,8 @@ export default function ResultsGallery({ items, kind }) {
                 src={item.image}
                 alt={
                   isResults
-                    ? `${item.course} result showing chemistry grade ${item.grade}${item.score != null ? ` and exam score ${item.score}` : ""}.`
-                    : `Original WhatsApp feedback: ${item.title}.`
+                    ? `${title(item)}${item.grade != null && item.score != null ? `, exam score ${item.score}` : ""}.`
+                    : `${item.title}.`
                 }
                 width={item.width}
                 height={item.height}
@@ -128,9 +130,9 @@ export default function ResultsGallery({ items, kind }) {
             {isResults && (
               <figcaption>
                 <strong>
-                  {item.course} · Grade {item.grade}
+                  {item.course} · {outcome(item)}
                 </strong>
-                {(item.score != null || item.session) && (
+                {((item.grade != null && item.score != null) || item.session) && (
                   <span>
                     {item.score != null
                       ? `Exam score ${item.score}`
@@ -171,8 +173,8 @@ export default function ResultsGallery({ items, kind }) {
             src={selected.image}
             alt={
               isResults
-                ? `Enhanced original statement: ${selected.course}, chemistry grade ${selected.grade}.`
-                : `Original WhatsApp message: ${selected.title}.`
+                ? `Enhanced original statement: ${title(selected)}.`
+                : `${selected.title}.`
             }
             width={selected.width}
             height={selected.height}

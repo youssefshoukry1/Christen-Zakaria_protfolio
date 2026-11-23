@@ -97,14 +97,6 @@
       "height": 583
     },
     {
-      "id": "chat-13",
-      "title": "Arabic messages of thanks after AS chemistry exams",
-      "language": "ar",
-      "image": "/reviews/enhanced/chat-13.webp",
-      "width": 736,
-      "height": 1600
-    },
-    {
       "id": "chat-14",
       "title": "Helpful notes and support before the exam",
       "language": "en",
@@ -127,6 +119,14 @@
       "image": "/reviews/enhanced/chat-16.webp",
       "width": 848,
       "height": 1600
+    },
+    {
+      "id": "handwritten-parent-note",
+      "title": "Handwritten thank-you note from a parent",
+      "language": "ar",
+      "image": "/reviews/enhanced/handwritten-parent-note.webp",
+      "width": 1050,
+      "height": 1100
     }
   ],
   "results": [
@@ -219,6 +219,14 @@
       "image": "/reviews/enhanced/result-09.webp",
       "width": 1206,
       "height": 216
+    },
+    {
+      "id": "result-10",
+      "course": "AP Chemistry",
+      "score": 4,
+      "image": "/reviews/enhanced/result-10.webp",
+      "width": 654,
+      "height": 850
     }
   ]
 }
