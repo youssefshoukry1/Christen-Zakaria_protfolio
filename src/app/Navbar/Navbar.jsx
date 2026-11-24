@@ -77,18 +77,18 @@ export default function Navbar() {
             Results & Feedback
           </Link>
           <Link
+            className={section === "curricula" ? "active" : ""}
+            aria-current={section === "curricula" ? "location" : undefined}
+            href="/#curricula"
+          >
+            Programmes
+          </Link>
+          <Link
             href="/#Videos"
             className={section === "Videos" ? "active" : ""}
             aria-current={section === "Videos" ? "location" : undefined}
           >
             Videos
-          </Link>
-          <Link
-            className={section === "curricula" ? "nav-explore active" : "nav-explore"}
-            aria-current={section === "curricula" ? "location" : undefined}
-            href="/#curricula"
-          >
-            Curricula <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </nav>
