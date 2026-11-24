@@ -70,18 +70,18 @@ export default function Navbar() {
             About
           </Link>
           <Link
-            href="/#Reviews"
-            className={section === "Reviews" ? "active" : ""}
-            aria-current={section === "Reviews" ? "location" : undefined}
-          >
-            Results & Feedback
-          </Link>
-          <Link
             className={section === "curricula" ? "active" : ""}
             aria-current={section === "curricula" ? "location" : undefined}
             href="/#curricula"
           >
             Programmes
+          </Link>
+          <Link
+            href="/#Reviews"
+            className={section === "Reviews" ? "active" : ""}
+            aria-current={section === "Reviews" ? "location" : undefined}
+          >
+            Results & Feedback
           </Link>
           <Link
             href="/#Videos"
